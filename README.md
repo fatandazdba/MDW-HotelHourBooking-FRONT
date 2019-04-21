@@ -36,7 +36,7 @@ Este proyecto es la práctica de MDW desarrollada de forma colaborativa con Scru
  Clonar el repositorio en tu equipo, **mediante consola**:
 ```sh
 > cd <folder path>
-> git clone https://github.com/miw-upm/betca-tpv-angular
+> git clone https://github.com/pmorenopina/MDW-HotelHourBooking-FRONT.git
 > npm install
 ```
 Importar el proyecto mediante **WebStorm**
