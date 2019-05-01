@@ -1,4 +1,4 @@
-const PATH_PROJECT = '/dist/betca-tpv-angular';
+const PATH_PROJECT = '/dist/MDW-HotelHourBooking-FRONT';
 const express = require('express');
 const http = require('http');
 const path = require('path');
