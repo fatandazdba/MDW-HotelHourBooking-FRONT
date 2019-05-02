@@ -8,6 +8,7 @@ import {AppMaterialModule} from './app-material.module';
 import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
 import {NgxChartsModule} from '@swimlane/ngx-charts';
+import {HabitacionService} from './home/habitacion.service';
 
 @NgModule({
   imports: [
@@ -23,10 +24,11 @@ import {NgxChartsModule} from '@swimlane/ngx-charts';
   declarations: [
     AppComponent,
     AppRoutingModule.COMPONENTS,
-    AppRoutingModule.DIALOGS,
+    AppRoutingModule.DIALOGS
   ],
   entryComponents: [AppRoutingModule.DIALOGS],
   providers: [
+    HabitacionService
   ],
   bootstrap: [AppComponent]
 })
