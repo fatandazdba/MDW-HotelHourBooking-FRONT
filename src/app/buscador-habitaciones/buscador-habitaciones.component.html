@@ -1,0 +1,15 @@
+
+
+<div class="md-form">
+  <label>Buscar habitación
+    <input type="search" placeholder="Datos del hotel">
+  </label>
+  <button ng-click="search()" >Buscar</button>
+</div>
+
+<div ng-repeat="item in items track by item.id">
+  <p>Tipo: {{response.tipo}}</p>
+  <p>Precio por hora: {{response.precioHora}}</p>
+  <p>Precio por día: {{response.precioDia}}</p>
+  <p>Servicios: {{response.servicios}}</p>
+</div>
