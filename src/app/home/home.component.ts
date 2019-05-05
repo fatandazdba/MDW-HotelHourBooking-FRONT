@@ -10,7 +10,7 @@ import {Habitacion} from '../ver-habitacion-dialog/habitacion.model';
 })
 export class HomeComponent {
 
-  static URL = 'HotelHourBooking';
+  static URL = 'home';
 
   habitacion: Habitacion;
 

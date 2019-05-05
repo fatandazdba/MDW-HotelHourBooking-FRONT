@@ -4,6 +4,7 @@ import {HomeComponent} from './home/home.component';
 import {VerHabitacionDialogComponent} from './ver-habitacion-dialog/ver-habitacion-dialog.component';
 import {BuscadorHabitacionesComponent} from './buscador-habitaciones/buscador-habitaciones.component';
 import {WelcomeComponent} from './welcome.component';
+import {ResumenReservaComponent} from './home/reservas/resumenReserva.component';
 
 const routes: Routes = [
   {path: '', pathMatch: 'full', redirectTo: WelcomeComponent.URL},
@@ -12,6 +13,7 @@ const routes: Routes = [
     path: HomeComponent.URL, component: HomeComponent,
     children: [
       {path: BuscadorHabitacionesComponent.URL, component: BuscadorHabitacionesComponent},
+      {path: ResumenReservaComponent.URL, component: ResumenReservaComponent},
 
     ]
   }
@@ -25,7 +27,8 @@ export class AppRoutingModule {
   static COMPONENTS = [
     HomeComponent,
     WelcomeComponent,
-    BuscadorHabitacionesComponent
+    BuscadorHabitacionesComponent,
+    ResumenReservaComponent
   ];
 
   static DIALOGS = [
