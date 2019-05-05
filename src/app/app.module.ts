@@ -10,6 +10,7 @@ import {AppComponent} from './app.component';
 import {NgxChartsModule} from '@swimlane/ngx-charts';
 import {HabitacionService} from './home/habitacion.service';
 
+
 @NgModule({
   imports: [
     AppMaterialModule,
@@ -24,7 +25,7 @@ import {HabitacionService} from './home/habitacion.service';
   declarations: [
     AppComponent,
     AppRoutingModule.COMPONENTS,
-    AppRoutingModule.DIALOGS
+    AppRoutingModule.DIALOGS,
   ],
   entryComponents: [AppRoutingModule.DIALOGS],
   providers: [

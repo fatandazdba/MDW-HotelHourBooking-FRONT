@@ -3,7 +3,8 @@ import {Observable} from 'rxjs';
 
 import {ApiEndpoint} from './api-endpoint.model';
 import {HttpService} from '../core/http.service';
-import {Habitacion} from '../ver-habitacion-dialog/habitacion.model';
+import {RoomModel} from './room.model';
+
 
 @Injectable()
 export class HabitacionService {
@@ -11,7 +12,8 @@ export class HabitacionService {
   constructor(private httpService: HttpService) {
   }
 
-  readOne(code: String): Observable<Habitacion> {
+  // code = id
+  readOne(code: number): Observable<RoomModel> {
     return this.httpService.get(ApiEndpoint.ROOMS + '/' + code);
   }
 }

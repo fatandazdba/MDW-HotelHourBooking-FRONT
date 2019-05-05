@@ -1,3 +1,26 @@
+<mat-card>
+  <mat-card-title>Habitacion de Hotel</mat-card-title>
+  <mat-card-content>
 <p>
-  ver-habitacion-dialog works!
+  Es el número de habitación: <output [(ngModel)]="habitacion.id" ></output>
 </p>
+
+<p>
+    <output [(ngModel)]="habitacion.tipo" > Es el tipo de habitación </output>
+</p>
+
+<p>
+  <output [(ngModel)]="habitacion.precioHora">€ Es el precio por hora de la habitación </output>
+</p>
+
+<p>
+  <output [(ngModel)]="habitacion.tipo">€ Es el precio por día de la habitación </output>
+</p>
+
+<p>
+  Además se incluyen los siguientes servicios:
+  <output [(ngModel)]="habitacion.servicios"></output>
+</p>
+
+  </mat-card-content>
+</mat-card>
