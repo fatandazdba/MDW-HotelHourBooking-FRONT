@@ -6,7 +6,9 @@ import {HttpService} from '../core/http.service';
 import {RoomModel} from './room.model';
 
 
-@Injectable()
+@Injectable({
+  providedIn: 'root'
+})
 export class HabitacionService {
 
   constructor(private httpService: HttpService) {

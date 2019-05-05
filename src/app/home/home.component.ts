@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component} from '@angular/core';
 import {MatDialog, MatDialogConfig} from '@angular/material';
 import {HabitacionService} from './habitacion.service';
 import {VerHabitacionDialogComponent} from '../ver-habitacion-dialog/ver-habitacion-dialog.component';
@@ -8,9 +8,9 @@ import {Habitacion} from '../ver-habitacion-dialog/habitacion.model';
   templateUrl: 'home.component.html',
   styleUrls: ['home.component.css'],
 })
-export class HomeComponent implements OnInit{
+export class HomeComponent {
 
-  static URL = 'habitaciones';
+  static URL = 'HotelHourBooking';
 
   habitacion: Habitacion;
 

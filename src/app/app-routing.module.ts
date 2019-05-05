@@ -5,9 +5,16 @@ import {VerHabitacionDialogComponent} from './ver-habitacion-dialog/ver-habitaci
 
 
 const routes: Routes = [
-  {path: '', pathMatch: 'full', component: HomeComponent},
-];
+  {path: '', pathMatch: 'full', redirectTo: HomeComponent.URL},
+  {path: HomeComponent.URL, component: HomeComponent},
+  {
+    path: HomeComponent.URL, component: HomeComponent,
+    children: [
+      // {path: AlarmComponent.URL, component: AlarmComponent},
 
+    ]
+  }
+];
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
