@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import {Component, OnInit} from '@angular/core';
+import {HttpClient} from '@angular/common/http';
 
 
 @Component({
@@ -8,6 +8,7 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./buscador-habitaciones.component.css']
 })
 export class BuscadorHabitacionesComponent implements OnInit {
+  static URL = 'Habitaciones';
   get search(): () => void {
     return this._search;
   }

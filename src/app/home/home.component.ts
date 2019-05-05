@@ -22,9 +22,6 @@ export class HomeComponent {
   constructor(private dialog: MatDialog, private habitacionService: HabitacionService) {
   }
 
-  ngOnInit(): void {
-  }
-
 
   verHabitacion() {
     this.dialogConfig = {
