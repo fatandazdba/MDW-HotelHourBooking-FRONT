@@ -11,6 +11,7 @@ import {NgxChartsModule} from '@swimlane/ngx-charts';
 import {HabitacionService} from './home/habitacion.service';
 import { BuscadorHabitacionesComponent } from './buscador-habitaciones/buscador-habitaciones.component';
 
+
 @NgModule({
   imports: [
     AppMaterialModule,
