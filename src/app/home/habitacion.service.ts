@@ -1,7 +1,7 @@
 import {Injectable} from '@angular/core';
 import {Observable} from 'rxjs';
 
-import {ApiEndpoint} from './api-endpoint.model';
+import {ApiEndpoint} from './shared/api-endpoint.model';
 import {HttpService} from '../core/http.service';
 import {RoomModel} from './room.model';
 

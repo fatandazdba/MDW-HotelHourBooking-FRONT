@@ -10,7 +10,6 @@ import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
 
 import {HabitacionService} from './home/habitacion.service';
-import {BuscadorHabitacionesComponent} from './buscador-habitaciones/buscador-habitaciones.component';
 
 @NgModule({
   imports: [
@@ -27,8 +26,7 @@ import {BuscadorHabitacionesComponent} from './buscador-habitaciones/buscador-ha
   declarations: [
     AppComponent,
     AppRoutingModule.COMPONENTS,
-    AppRoutingModule.DIALOGS,
-    BuscadorHabitacionesComponent
+    AppRoutingModule.DIALOGS
   ],
   entryComponents: [AppRoutingModule.DIALOGS],
   providers: [

@@ -1,5 +1,8 @@
 import {Component, OnInit} from '@angular/core';
-import {HttpClient} from '@angular/common/http';
+import {HotelesService} from '../home/shared/hoteles.service';
+import {Habitacion} from '../ver-habitacion-dialog/habitacion.model';
+import {MatSnackBar} from '@angular/material';
+import {Hotel} from '../home/shared/hotel.model';
 
 
 @Component({
@@ -9,27 +12,40 @@ import {HttpClient} from '@angular/common/http';
 })
 export class BuscadorHabitacionesComponent implements OnInit {
   static URL = 'Habitaciones';
-  get search(): () => void {
-    return this._search;
-  }
-
-  set search(value: () => void) {
-    this._search = value;
-  }
-
-
+  namehotel = 'NH';
+  dpostal = '28919';
   response: any;
-  constructor(private http: HttpClient) { }
+  data: Habitacion[];
+  hotels: Hotel[] = [
+    {value: '1', viewValue: 'NH'},
+    {value: '2', viewValue: 'IBIS'},
+    {value: '3', viewValue: 'EXCELSIOR'}
+  ];
+
+  constructor(private hotelService: HotelesService, private snackBar: MatSnackBar) {
+  }
 
 
   ngOnInit() {
 
   }
 
-  private _search = () => {
-    this.http.get('http://localhost:8080/api/v0/hotels/search')
-      .subscribe((response) => {
-        this.response = response;
-      }); }
+  searchRoomsByHotel() {
+    this.hotelService.searchByHotel(
+      this.namehotel,
+      this.dpostal
+    ).subscribe(
+      resp => {
+        this.data = resp;
+      }, error => {
+        this.showMessage('Error when searching room by hotel.');
+      }
+    );
+  }
 
+  showMessage(message: string) {
+    this.snackBar.open(message, '', {
+      duration: 5000
+    });
+  }
 }

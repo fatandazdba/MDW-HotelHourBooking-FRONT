@@ -1,15 +1,19 @@
+<h4>Buscar habitación</h4>
+<mat-form-field>
+  <mat-label>Selecciona hotel</mat-label>
+  <mat-select>
+    <mat-option *ngFor="let hotel of hotels" [value]="hotel.value">
+      {{hotel.viewValue}}
+    </mat-option>
+  </mat-select>
+</mat-form-field>
 
+<button mat-raised-button (click)="searchRoomsByHotel()">Buscar</button>
 
-<div class="md-form">
-  <label>Buscar habitación
-    <input type="search" placeholder="Datos del hotel">
-  </label>
-  <button ng-click="search()" >Buscar</button>
-</div>
-
+<!--
 <div ng-repeat="item in items track by item.id">
   <p>Tipo: {{response.tipo}}</p>
   <p>Precio por hora: {{response.precioHora}}</p>
   <p>Precio por día: {{response.precioDia}}</p>
   <p>Servicios: {{response.servicios}}</p>
-</div>
+</div>-->
