@@ -1,9 +1,10 @@
 <h4>Buscar habitación</h4>
+
 <mat-form-field>
   <mat-label>Selecciona hotel</mat-label>
   <mat-select>
-    <mat-option *ngFor="let hotel of hotels" [value]="hotel.value">
-      {{hotel.viewValue}}
+    <mat-option *ngFor="let hotel of hotels" [value]="hotel.id">
+      {{hotel.name}}
     </mat-option>
   </mat-select>
 </mat-form-field>

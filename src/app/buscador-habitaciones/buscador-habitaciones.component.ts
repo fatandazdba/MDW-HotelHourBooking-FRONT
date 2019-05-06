@@ -17,9 +17,9 @@ export class BuscadorHabitacionesComponent implements OnInit {
   response: any;
   data: Habitacion[];
   hotels: Hotel[] = [
-    {value: '1', viewValue: 'NH'},
-    {value: '2', viewValue: 'IBIS'},
-    {value: '3', viewValue: 'EXCELSIOR'}
+    {id: '1', name: 'NH'},
+    {id: '2', name: 'IBIS'},
+    {id: '3', name: 'EXCELSIOR'}
   ];
 
   constructor(private hotelService: HotelesService, private snackBar: MatSnackBar) {
