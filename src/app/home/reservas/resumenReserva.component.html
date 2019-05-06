@@ -1,5 +1,65 @@
-<mat-card>
-  <mat-card-title>Información Reserva</mat-card-title>
-</mat-card>
-<
-<mat-card>Datos de la reserva</mat-card>
+<mat-vertical-stepper [linear]="isLinear" #stepper>
+  <mat-step [stepControl]="firstFormGroup">
+    <form [formGroup]="firstFormGroup">
+      <ng-template matStepLabel>Verify your information Personal</ng-template>
+
+      <mat-form-field class="example-full-width">
+        <input matInput placeholder="Dni" value="{{reserva1.cliente.dni}}" formControlName="firstCtrl" required>
+      </mat-form-field>
+      <mat-form-field class="example-full-width">
+        <input matInput placeholder="Nombre" value="{{reserva1.cliente.nombre}}" formControlName="firstCtrl" required>
+      </mat-form-field>
+      <mat-form-field class="example-full-width">
+        <input matInput placeholder="Apellidos" value="{{reserva1.cliente.apellidos}}" formControlName="firstCtrl"
+               required>
+      </mat-form-field>
+      <mat-form-field class="example-full-width">
+        <input matInput placeholder="Telefono" value="{{reserva1.cliente.telefono}}" formControlName="firstCtrl"
+               required>
+      </mat-form-field>
+      <mat-form-field class="example-full-width">
+        <input matInput placeholder="Email" value="{{reserva1.cliente.email}}" formControlName="firstCtrl" required>
+      </mat-form-field>
+
+
+      <div>
+        <button mat-button matStepperNext>Next</button>
+      </div>
+    </form>
+  </mat-step>
+  <mat-step [stepControl]="secondFormGroup">
+    <form [formGroup]="secondFormGroup">
+      <ng-template matStepLabel>Check the reservation information</ng-template>
+      <mat-form-field>
+        <input matInput placeholder="Hotel" value="{{reserva1.hotel}}" formControlName="secondCtrl" required>
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="Fecha de inicio" value="{{reserva1.fechainicio}}" formControlName="secondCtrl"
+               required>
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="Fecha de fin" value="{{reserva1.fechafin}}" type="date"
+               formControlName="secondCtrl" required>
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="Precio Total" value="{{reserva1.precioTotal}}" formControlName="secondCtrl"
+               required>
+      </mat-form-field>
+
+      <div>
+        <button mat-button matStepperPrevious>Back</button>
+        <button mat-button matStepperNext>Next</button>
+      </div>
+    </form>
+  </mat-step>
+  <mat-step>
+    <ng-template matStepLabel>Reserve</ng-template>
+    Make a reservation
+    <div>
+      <button mat-button color="info" matStepperPrevious>Back</button>
+      <button mat-button color="primary" mat-dialog-close (click)="save()">Save</button>
+      <button mat-raised-button mat-dialog-close>Cancel</button>
+      <!--<button mat-button (click)="stepper.reset()">Reset</button>-->
+    </div>
+  </mat-step>
+</mat-vertical-stepper>

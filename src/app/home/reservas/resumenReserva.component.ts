@@ -1,9 +1,11 @@
 import {Component, OnInit} from '@angular/core';
-import {FormBuilder, FormGroup} from '@angular/forms';
+import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {MAT_MOMENT_DATE_FORMATS, MomentDateAdapter} from '@angular/material-moment-adapter';
 import {DateAdapter, MAT_DATE_FORMATS, MAT_DATE_LOCALE} from '@angular/material/core';
-import {MatDialog, MatSnackBar} from '@angular/material';
+import {MatSnackBar} from '@angular/material';
 import {Reserva} from '../shared/reserva.model';
+import {Cliente} from '../shared/cliente.model';
+
 
 @Component({
   selector: 'app-inforeserva',
@@ -17,30 +19,50 @@ import {Reserva} from '../shared/reserva.model';
 })
 export class ResumenReservaComponent implements OnInit {
   static URL = 'reservas';
-  reserva: Reserva;
-  isChecked: boolean;
-  form: FormGroup;
-  endDate: Date;
-  title = 'InfoReserva management';
-  columns = ['id', 'value'];
+  finicio = new Date('20190613T00:00:00');
+  ffin = new Date('20190613T00:00:00');
 
-  // data: reserva[];
+  clienteR: Cliente = {
+    nombre: 'Juan', dni: '12345678T',
+    apellidos: 'Perez Quintana', telefono: '913453333',
+    email: 'jperez@prueba.com', direccion: 'av euro 2'
+  };
+  reserva1: Reserva =
+    {id: '1', cliente: this.clienteR, hotel: 'NH', fechainicio: this.finicio, fechafin: this.ffin, precioTotal: 100};
+  isLinear = false;
+  firstFormGroup: FormGroup;
+  secondFormGroup: FormGroup;
+
+  constructor(private _formBuilder: FormBuilder, fb: FormBuilder, private snackBar: MatSnackBar) {
 
 
-  constructor(fb: FormBuilder, private dialog: MatDialog, private snackBar: MatSnackBar) {
-    /* this.form = new FormGroup({
-       initDate: new FormControl(),
-       endDate: new FormControl()
-     });
-     this.isChecked = false;*/
   }
-
   onChkChange() {
   }
 
+  save() {
+    this.showMessage('Reservation made');
+  }
 
   ngOnInit(): void {
-    // this.isChecked = false;
+    this.firstFormGroup = this._formBuilder.group({
+      firstCtrl: ['', Validators.required]
+    });
+    this.secondFormGroup = this._formBuilder.group({
+      secondCtrl: ['', Validators.required]
+    });
 
   }
+
+  showMessage(message: string) {
+    this.snackBar.open(message, '', {
+      duration: 5000
+    });
+  }
+
+  convertToDate = function (stringDate) {
+    const dateOut = new Date(stringDate);
+    dateOut.setDate(dateOut.getDate() + 1);
+    return dateOut;
+  };
 }

@@ -1,6 +1,10 @@
+import {Cliente} from './cliente.model';
+
 export interface Reserva {
+  id: string;
   hotel: string;
-  value: number;
-  dateOfUse?: Date;
-  creationDate: Date;
+  precioTotal: number;
+  fechainicio?: Date;
+  fechafin?: Date;
+  cliente: Cliente;
 }

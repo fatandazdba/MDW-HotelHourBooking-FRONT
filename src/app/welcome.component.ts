@@ -2,7 +2,6 @@ import {Component} from '@angular/core';
 import {MatDialog} from '@angular/material';
 import {ResumenReservaComponent} from './home/reservas/resumenReserva.component';
 import {Router} from '@angular/router';
-import {HomeComponent} from './home/home.component';
 
 // import {LoginDialogComponent} from './core/login-dialog.component';
 
@@ -18,9 +17,9 @@ export class WelcomeComponent {
 
   login() {
 
-    this.router.navigate([HomeComponent.URL, ResumenReservaComponent.URL]);
-
-
+    // this.router.navigate([HomeComponent.URL, ResumenReservaComponent.URL]);
+    this.dialog.open(ResumenReservaComponent);
+    // this.router.navigate([ResumenReservaComponent.URL]);
     /*  this.dialog.open(LoginDialogComponent,
         {
           data: {homeUrl: HomeComponent.URL}
