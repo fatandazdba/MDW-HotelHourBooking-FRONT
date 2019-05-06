@@ -8,7 +8,7 @@ import {Reserva} from '../shared/reserva.model';
 @Component({
   selector: 'app-inforeserva',
   templateUrl: `resumenReserva.component.html`,
-  styleUrls: ['resumenreserva.component.css'],
+  styleUrls: ['./resumenreserva.component.css'],
   providers: [
     {provide: MAT_DATE_LOCALE, useValue: 'es-ES'},
     {provide: DateAdapter, useClass: MomentDateAdapter, deps: [MAT_DATE_LOCALE]},
