@@ -6,12 +6,12 @@
 > Web en acción: (Próximamente)  
 > El Back-end se desarrolla en Spring en el proyecto [MDW-HotelHourBooking-BACK](https://github.com/pmorenopina/MDW-HotelHourBooking-BACK).   
 > Ejecución en local:
-> * Se debe tener arrancado el motor de MongoDB: `mongodb://localhost:27017/hotel-hour-boooking` (Próximamente)  
-> * Se debe arrancar el **API** en linea de comando, mediante: `> mvn clean spring-boot:run` (Próximamente) 
+> * Se debe tener arrancado el motor de MongoDB: `mongodb://localhost:27017/hotel-hour-boooking`
+> * Se debe arrancar el **API** en linea de comando, mediante: `> mvn clean spring-boot:run`
 > * Se debe arrancar **Angular**:  
 >   * Perfil **dev**:`> ng serve`. [http://localhost:4200/](http://localhost:4200/)  
->   * Perfil **prod** en local: `> ng serve --prod` , en este caso ataca al API de prod (Próximamente)
->   * Perfil **prod** mediante **Express**: `> ng build --prod` & `> node server.js`, en este caso ataca al API de prod (Próximamente)
+>   * Perfil **prod** en local: `> ng serve --prod` , en este caso ataca al API de prod
+>   * Perfil **prod** mediante **Express**: `> ng build --prod` & `> node server.js`, en este caso ataca al API de prod
 
 This project was generated with  
 * Node version 8.15.0
