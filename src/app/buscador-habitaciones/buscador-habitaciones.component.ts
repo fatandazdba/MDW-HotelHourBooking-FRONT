@@ -33,17 +33,20 @@ export class BuscadorHabitacionesComponent implements OnInit {
   }
 
   searchRoomsByHotel() {
-    // this.showMessage(this.dpostal);
-    this.hotelService.searchByHotel(
-      this.namehotel,
-      this.dpostal
-    ).subscribe(
-      resp => {
-        this.data = resp;
-      }, error => {
-        this.showMessage('Error when searching room by hotel.');
-      }
-    );
+    if (this.dpostal === '') {
+      this.showMessage('Por favor introduzca un CP,por ejemplo 28919');
+    } else {
+      this.hotelService.searchByHotel(
+        this.namehotel,
+        this.dpostal
+      ).subscribe(
+        resp => {
+          this.data = resp;
+        }, error => {
+          this.showMessage('Error when searching room by hotel.');
+        }
+      );
+    }
   }
 
   openMockResumenReserva() {
