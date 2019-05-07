@@ -3,10 +3,10 @@ import {MatDialog, MatDialogConfig} from '@angular/material';
 import {HabitacionService} from './habitacion.service';
 import {VerHabitacionDialogComponent} from '../ver-habitacion-dialog/ver-habitacion-dialog.component';
 import {Habitacion} from '../ver-habitacion-dialog/habitacion.model';
-import {RoomModel} from './room.model';
 import {RoomsModel} from './rooms.model';
 
 @Component({
+  selector: 'app-home',
   templateUrl: 'home.component.html',
   styleUrls: ['home.component.css'],
 })
