@@ -4,6 +4,7 @@ import {Observable} from 'rxjs';
 import {ApiEndpoint} from './shared/api-endpoint.model';
 import {HttpService} from '../core/http.service';
 import {RoomModel} from './room.model';
+import {RoomsModel} from './rooms.model';
 
 
 @Injectable({
@@ -17,5 +18,9 @@ export class HabitacionService {
   // code = id
   readOne(code: number): Observable<RoomModel> {
     return this.httpService.get(ApiEndpoint.ROOMS + '/' + code);
+  }
+
+  readAll(): Observable<RoomsModel[]> {
+    return this.httpService.get(ApiEndpoint.ROOMS);
   }
 }
