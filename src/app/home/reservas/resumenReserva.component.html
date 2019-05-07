@@ -4,21 +4,21 @@
       <ng-template matStepLabel>Verify your information Personal</ng-template>
 
       <mat-form-field class="example-full-width">
-        <input matInput placeholder="Dni" value="{{reserva1.cliente.dni}}" formControlName="firstCtrl" required>
+        <input matInput placeholder="Dni" value="{{reserva1.cliente.dni}}" disabled>
       </mat-form-field>
       <mat-form-field class="example-full-width">
-        <input matInput placeholder="Nombre" value="{{reserva1.cliente.nombre}}" formControlName="firstCtrl" required>
+        <input matInput placeholder="Nombre" value="{{reserva1.cliente.nombre}}" disabled>
       </mat-form-field>
       <mat-form-field class="example-full-width">
-        <input matInput placeholder="Apellidos" value="{{reserva1.cliente.apellidos}}" formControlName="firstCtrl"
-               required>
+        <input matInput placeholder="Apellidos" value="{{reserva1.cliente.apellidos}}" disabled>
+
       </mat-form-field>
       <mat-form-field class="example-full-width">
-        <input matInput placeholder="Telefono" value="{{reserva1.cliente.telefono}}" formControlName="firstCtrl"
-               required>
+        <input matInput placeholder="Telefono" value="{{reserva1.cliente.telefono}}" disabled>
       </mat-form-field>
       <mat-form-field class="example-full-width">
-        <input matInput placeholder="Email" value="{{reserva1.cliente.email}}" formControlName="firstCtrl" required>
+        <input matInput placeholder="Telefono" value="{{reserva1.cliente.email}}" disabled>
+
       </mat-form-field>
 
 
@@ -31,19 +31,18 @@
     <form [formGroup]="secondFormGroup">
       <ng-template matStepLabel>Check the reservation information</ng-template>
       <mat-form-field>
-        <input matInput placeholder="Hotel" value="{{reserva1.hotel}}" formControlName="secondCtrl" required>
+        <input matInput placeholder="Hotel" value="{{reserva1.hotel}}" disabled>
       </mat-form-field>
       <mat-form-field>
-        <input matInput placeholder="Fecha de inicio" value="{{reserva1.fechainicio}}" formControlName="secondCtrl"
-               required>
+        <input matInput placeholder="Fecha de inicio" type="datetime-local" value="{{reserva1.fechainicio}}" disabled>
+
       </mat-form-field>
       <mat-form-field>
-        <input matInput placeholder="Fecha de fin" value="{{reserva1.fechafin}}" type="date"
-               formControlName="secondCtrl" required>
+        <input matInput placeholder="Fecha de fin" type="datetime-local" value="{{reserva1.fechafin}}" disabled>
       </mat-form-field>
       <mat-form-field>
-        <input matInput placeholder="Precio Total" value="{{reserva1.precioTotal}}" formControlName="secondCtrl"
-               required>
+        <input matInput placeholder="Precio Total" value="{{reserva1.precioTotal}}" disabled>
+
       </mat-form-field>
 
       <div>
@@ -56,8 +55,8 @@
     <ng-template matStepLabel>Reserve</ng-template>
     Make a reservation
     <div>
-      <button mat-button color="info" matStepperPrevious>Back</button>
-      <button mat-button color="primary" mat-dialog-close (click)="save()">Save</button>
+      <button mat-raised-button matStepperPrevious color="primary">Back</button>
+      <button mat-raised-button color="warn" mat-dialog-close (click)="save()">Save</button>
       <button mat-raised-button mat-dialog-close>Cancel</button>
       <!--<button mat-button (click)="stepper.reset()">Reset</button>-->
     </div>

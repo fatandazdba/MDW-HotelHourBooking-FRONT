@@ -15,15 +15,7 @@ export class WelcomeComponent {
   constructor(private dialog: MatDialog, private router: Router) {
   }
 
-  login() {
-
-    // this.router.navigate([HomeComponent.URL, ResumenReservaComponent.URL]);
+  viewmockresumenreserva() {
     this.dialog.open(ResumenReservaComponent);
-    // this.router.navigate([ResumenReservaComponent.URL]);
-    /*  this.dialog.open(LoginDialogComponent,
-        {
-          data: {homeUrl: HomeComponent.URL}
-        }
-      );*/
   }
 }

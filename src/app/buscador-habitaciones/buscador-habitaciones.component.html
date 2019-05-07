@@ -9,7 +9,7 @@
   </mat-select>
 </mat-form-field>
   <mat-form-field>
-    <input matInput placeholder="CP" value="" required>
+    <input matInput placeholder="CP" [(ngModel)]="dpostal" value="" required>
   </mat-form-field>
   <button mat-raised-button (click)="searchRoomsByHotel()">Buscar</button>
 </mat-card>
@@ -20,7 +20,7 @@
     <h3 matLine> {{item.servicios}} </h3>
     <h3 matLine> {{item.precioDia}} </h3>
     <h3 matLine> {{item.precioHora}} </h3>
-    <button mat-raised-button color="accent">Reservar</button>
+    <button mat-raised-button color="accent" (click)="openMockResumenReserva();" )>Reservar</button>
   </mat-list-item>
 </mat-list>
 

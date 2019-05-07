@@ -1,8 +1,9 @@
 import {Component, OnInit} from '@angular/core';
 import {HotelesService} from '../home/shared/hoteles.service';
 import {Habitacion} from '../ver-habitacion-dialog/habitacion.model';
-import {MatSnackBar} from '@angular/material';
+import {MatDialog, MatSnackBar} from '@angular/material';
 import {Hotel} from '../home/shared/hotel.model';
+import {ResumenReservaComponent} from '../home/reservas/resumenReserva.component';
 
 
 @Component({
@@ -22,7 +23,8 @@ export class BuscadorHabitacionesComponent implements OnInit {
     {id: '3', name: 'EXCELSIOR'}
   ];
 
-  constructor(private hotelService: HotelesService, private snackBar: MatSnackBar) {
+  constructor(private dialog: MatDialog, private hotelService: HotelesService, private snackBar: MatSnackBar) {
+    this.dpostal = '';
   }
 
 
@@ -31,6 +33,7 @@ export class BuscadorHabitacionesComponent implements OnInit {
   }
 
   searchRoomsByHotel() {
+    // this.showMessage(this.dpostal);
     this.hotelService.searchByHotel(
       this.namehotel,
       this.dpostal
@@ -41,6 +44,10 @@ export class BuscadorHabitacionesComponent implements OnInit {
         this.showMessage('Error when searching room by hotel.');
       }
     );
+  }
+
+  openMockResumenReserva() {
+    this.dialog.open(ResumenReservaComponent);
   }
 
   showMessage(message: string) {
